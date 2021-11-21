@@ -1,9 +1,9 @@
-# Overview
-This website holds data and information to reproduce the results presented in the publication `Discriminative Attribution from Paired Images` (DAPI). For the projects repository, click [here](https://github.com/anon211121/dapi.git). 
+# Discriminative Attribution from Paired Images
+This website holds data and information to reproduce the results presented in the publication `Discriminative Attribution from Paired Images` (DAPI). For the projects repository, click [here](https://github.com/dapi-method/dapi.git). 
 
 # Installation
 ```
-git clone https://github.com/anon211121/dapi.git
+git clone https://github.com/dapi-method/dapi.git
 cd dapi
 conda create --name dapi --file conda_requirements.txt
 conda activate dapi
