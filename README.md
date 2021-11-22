@@ -1,4 +1,4 @@
-# 
+# DAPI
 This website holds data and information to reproduce the results presented in the publication `Discriminative Attribution from Paired Images` (DAPI). For the projects repository, click [here](https://github.com/dapi-method/dapi.git). 
 
 # Installation
