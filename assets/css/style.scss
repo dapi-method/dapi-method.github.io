@@ -4,9 +4,5 @@
 @import "{{ site.theme }}";
 .page-header {
     background-image: url('/assets/header.png');
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: space-around;
-    align-items: center;
-    align-content: space-around;
+    background-size: contain;
 }
