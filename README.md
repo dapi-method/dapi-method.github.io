@@ -51,10 +51,9 @@ DAPI AUC for each method shown in console (Table 1).
 ### Visualize and calculate DAPI scores for Goyal et al. 
 This reproduces Fig. 5 & Goyal column in Table 1
 ```
-python dapi/scripts/plot_goyal.py --dset <dset_name> --goyal_dset_path dapi_data/results/goyal_<net>/<dset> 
---dapi_dset_path dapi_data/results/<experiment>/<net> --dapi_method <method>
+python dapi/scripts/plot_goyal.py --dset <dset_name> --goyal_dset_path dapi_data/results/goyal_<net>/<dset> --dapi_dset_path dapi_data/results/<experiment>/<net> --dapi_method <method>
 ```
-method must be one of dl, ig, gc, ggc, ingrad, residual.
+`method` must be one of dl, ig, gc, ggc, ingrad, residual.
   
 Plots will be stored at 
 ```
