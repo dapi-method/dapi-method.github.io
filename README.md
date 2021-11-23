@@ -1,5 +1,5 @@
 # DAPI
-This website holds data and information to reproduce the results presented in the publication `Discriminative Attribution from Paired Images` (DAPI). For the projects repository, click [here](https://github.com/dapi-method/dapi.git). 
+This website holds data and information to reproduce the results presented in the publication `Discriminative Attribution from Paired Images` (DAPI). For the project repository, click [here](https://github.com/dapi-method/dapi.git). 
 
 # Installation
 ```
@@ -29,11 +29,37 @@ Download DAPI Data [here](https://www.dropbox.com/sh/gpcjilkwlybp3qn/AACRqQbVolS
     ```
   - Results from attribution runs.
     ```
-    results/<experiment>_211121
+    results/<experiment>
+    ```
+  - Results from Goyal et al. comparison.
+    ```
+    results/goyal_<net>
     ```
 
 ## Instructions
-### Run attribution & mask extraction on already translated images
+### Visualize and calculate DAPI scores (Reproduces main results shown in Fig. 4 & Table 1)
+```
+python dapi/scripts/plot_dapi.py --result_dir dapi_data/results/<experiment>/<net> --experiment <experiment> --net <net>
+```
+Plots will be stored at 
+```
+./dapi_plot_<experiment>_<net>.png
+```
+DAPI AUC for each method shown in console (Table 1).
+
+### Visualize and calculate DAPI scores for Goyal et al. (Reproduces Fig. 5 & Goyal column in Table 1)
+```
+python dapi/scripts/plot_goyal.py --dset <dset_name> --goyal_dset_path dapi_data/results/goyal_<net>/<dset> --dapi_dset_path dapi_data/results/<experiment>/<net> --dapi_method <method>
+```
+<method> must be one of dl, ig, gc, ggc, ingrad, residual.
+  
+Plots will be stored at 
+```
+./<experiment>_goyal_<net>.png
+```
+DAPI AUC for each method shown in console (Table 1, GOYAL column).
+
+### Rerun attribution & mask extraction on already translated images (reproduces data in results)
 
 ```
 python dapi/scripts/run_dapi.py --config experiments/configs/<experiment>.ini --net <net>
@@ -49,20 +75,8 @@ the submit command and num_workers in the respective experiment config file at:
 ```
 dapi/configs/<experiment>.ini
 ```
-
-### Visualize and calculate DAPI scores
-
-```
-python dapi/scripts/plot_dapi.py --result_dir dapi_data/results/<experiment>/<net> --experiment <experiment> --net <net>
-```
-Plots will be stored at 
-```
-./dapi_plot_<experiment>_<net>.png
-```
-AUC scores for each method shown in console.
    
-
-### Train cycle GANs and generate translated datasets from scratch
+### Retrain cycle GANs and generate translated datasets from scratch
 - Create paired dataset:
 ```
 cd dapi
