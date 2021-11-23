@@ -38,7 +38,7 @@ Download DAPI Data [here](https://www.dropbox.com/sh/gpcjilkwlybp3qn/AACRqQbVolS
 
 ## Instructions
 ### Visualize and calculate DAPI scores 
-#### Reproduces main results shown in Fig. 4 & Table 1
+This reproduces main results shown in Fig. 4 & Table 1.
 ```
 python dapi/scripts/plot_dapi.py --result_dir dapi_data/results/<experiment>/<net> --experiment <experiment> --net <net>
 ```
@@ -49,7 +49,7 @@ Plots will be stored at
 DAPI AUC for each method shown in console (Table 1).
 
 ### Visualize and calculate DAPI scores for Goyal et al. 
-#### Reproduces Fig. 5 & Goyal column in Table 1
+This reproduces Fig. 5 & Goyal column in Table 1
 ```
 python dapi/scripts/plot_goyal.py --dset <dset_name> --goyal_dset_path dapi_data/results/goyal_<net>/<dset> --dapi_dset_path dapi_data/results/<experiment>/<net> --dapi_method <method>
 ```
