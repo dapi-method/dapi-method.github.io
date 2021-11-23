@@ -1,5 +1,7 @@
 # DAPI
-This website holds data and information to reproduce the results presented in the publication `Discriminative Attribution from Paired Images` (DAPI). For the project repository, click [here](https://github.com/dapi-method/dapi.git). 
+This website holds data and information to reproduce the results presented in the publication `Discriminative Attribution from Paired Images` (DAPI). For the project repository, click [here](https://github.com/dapi-method/dapi.git).
+
+![DAPI](assets/fig_3.png)
 
 # Installation
 ```
