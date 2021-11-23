@@ -61,7 +61,8 @@ Plots will be stored at
 ```
 DAPI AUC for each method shown in console (Table 1, GOYAL column).
 
-### Rerun attribution & mask extraction on already translated images (reproduces data in results)
+### Rerun attribution & mask extraction on already translated images 
+This reproduces the data in `dapi_data/results`.
 
 ```
 python dapi/scripts/run_dapi.py --config experiments/configs/<experiment>.ini --net <net>
