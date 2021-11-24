@@ -42,7 +42,7 @@ Download DAPI Data [here](https://www.dropbox.com/sh/gpcjilkwlybp3qn/AACRqQbVolS
 ### Visualize and calculate DAPI scores 
 This reproduces main results shown in Fig. 4 & Table 1.
 ```
-python dapi/scripts/plot_dapi.py --result_dir dapi_data/results/<experiment>/<net> --experiment <experiment> --net <net>
+python dapi/experiments/scripts/plot_dapi.py --result_dir dapi_data/results/<experiment>/<net> --experiment <experiment> --net <net>
 ```
 Plots will be stored at 
 ```
@@ -53,7 +53,7 @@ DAPI AUC for each method shown in console (Table 1).
 ### Visualize and calculate DAPI scores for Goyal et al. 
 This reproduces Fig. 5 & Goyal column in Table 1
 ```
-python dapi/scripts/plot_goyal.py --dset <dset_name> --goyal_dset_path dapi_data/results/goyal_<net>/<dset> --dapi_dset_path dapi_data/results/<experiment>/<net> --dapi_method <method>
+python dapi/experiments/scripts/plot_goyal.py --dset <dset_name> --goyal_dset_path dapi_data/results/goyal_<net>/<dset> --dapi_dset_path dapi_data/results/<experiment>/<net> --dapi_method <method>
 ```
 `method` must be one of dl, ig, gc, ggc, ingrad, residual.
   
@@ -63,22 +63,24 @@ Plots will be stored at
 ```
 DAPI AUC for each method shown in console (Table 1, GOYAL column).
 
+See `dapi/experiments/goyal` for instructions on how to reproduce the Goyal data.
+
 ### Rerun attribution & mask extraction on already translated images 
 This reproduces the data in `dapi_data/results`.
 
 ```
-python dapi/scripts/run_dapi.py --config experiments/configs/<experiment>.ini --net <net>
+python dapi/experiments/scripts/run_dapi.py --config experiments/configs/<experiment>.ini --net <net>
 ```
 
 For experiment in {synapses, mnist, disc_a, disc_b, horses_zebras, apples_oranges, summer_winter}, net in {VGG, RES}. Results will be stored in 
 ```
-experiments/results/<experiment>
+dapi/experiments/results/<experiment>
 ```
 
 Default behaviour is to run the script locally using 20 workers. This can be changed via editing 
 the submit command and num_workers in the respective experiment config file at:
 ```
-dapi/configs/<experiment>.ini
+dapi/experiments/configs/<experiment>.ini
 ```
    
 ### Retrain cycle GANs and generate translated datasets from scratch
@@ -100,4 +102,3 @@ python cycle_gan/start_training.py --experiment <experiment> --data_root ~/dapi_
 ```
 python cycle_gan/start_testing.py --experiment <experiment> --data_root ~/dapi_data/data/raw/<experiment>/cycle_gan --aux_net <vgg/res> --aux_checkpoint ~/dapi_data/checkpoints/<experiment>/classifiers/<vgg/res>_checkpoint --gan_checkpoint_dir <path to gan_checkpoint_dir>
 ```
-
